@@ -1,124 +1,125 @@
-# 👁️ Gaze Authentication System
+Gaze-Based Authentication System
+This project implements a gaze-based authentication system using facial recognition, gaze tracking, and a maze-based user interaction. It combines modern technologies to enhance user authentication security.
 
-A **Gaze-Based Authentication System** that uses eye movement patterns to authenticate users securely using computer vision.
+Features
 
----
+•Login System:
 
-## 🚀 Overview
+ •Users can log in using their username and password.
+ •Facial recognition ensures the user's identity matches stored credentials.
 
-This project enables authentication through **eye gaze tracking** instead of traditional passwords. Users follow a predefined pattern on the screen using their eyes, and the system verifies it.
+•Gaze Tracking:
 
----
+ •Users follow a maze path using their gaze.
+ •Authentication is granted based on successful gaze-path tracking.
 
-## ✨ Features
+•Responsive Web Design:
 
-* 👁️ Real-time eye tracking
-* 🔐 Secure gaze-based authentication
-* 🎯 Pattern-based login system
-* ⚡ Lightweight and fast
-* 🛡️ Resistant to shoulder-surfing attacks
+ •Intuitive and user-friendly web interfaces for login, gaze authentication, and success pages.
 
----
+•Security:
 
-## 🏗️ Tech Stack
+ •Passwords stored securely (ensure to use hashing in production).
+ •Gaze-based authentication adds an extra layer of security.
 
-* Python
-* OpenCV
-* Mediapipe / Dlib
-* NumPy
+•Technologies Used
+ •Backend:
 
----
+  •Python
+  •Flask Framework
 
-## ⚙️ How It Works
+ •Frontend:
 
-1. Capture webcam input
-2. Detect face and eyes
-3. Track gaze direction
-4. Map gaze to screen positions
-5. Match with stored pattern
-6. Authenticate user
+  •HTML5
+  •CSS3 (Responsive Design)
+  •JavaScript
 
----
+ •Gaze Tracking:
 
-## 📂 Project Structure
+  •GazeTracking Library
+  •OpenCV for webcam access
 
-```
-Gaze-authentication-System/
-│── main.py
-│── gaze_tracking.py
-│── utils.py
-│── requirements.txt
-│── README.md
-```
+ •Database:
 
----
+  •MySQL
+ •Other Tools:
 
-## 🧑‍💻 Installation
+  •Face Recognition Library
 
-### Clone the repository
+Setup Instructions
+Prerequisites
+•Python 3.7 or higher
+•MySQL Database
+•Web browser
+•Webcam
 
-```
-git clone https://github.com/divyanakka577/Gaze-authentication-System.git
-cd Gaze-authentication-System
-```
+Installation Steps
+ 1. Clone the Repository
+ 2. Install Dependencies:
+    •pip install -r requirements.txt
 
-### Install dependencies
+ 3. Set Up the Database:
+    •Create a MySQL database (e.g., user_auth).
+    •Import the schema:
+      CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    face_data BLOB NOT NULL
+     );
 
-```
-pip install -r requirements.txt
-```
+    •Insert sample user credentials and face data.
+ 4. Run the Application:
+    •python app.py
+ 5. Access the Application:
+    •Open your browser and go to: http://127.0.0.1:5000
 
-### Run the project
 
-```
-python main.py
-```
+Project Structure
+.
+├── app.py                 # Flask application logic
+├── gaze_tracking_module.py # Gaze tracking and maze generation
+├── templates/             # HTML templates
+│   ├── login.html
+│   ├── gaze_auth.html
+│   └── success.html
+├── static/                # CSS, JavaScript, and other assets
+├── requirements.txt       # Python dependencies
+└── README.md              # Project documentation
 
----
+Usage Instructions
+ 1. Login:
+    •Enter the username and password.
+    •Ensure your face is visible to the webcam for facial recognition.
+ 2. Gaze Authentication:
+    •Follow the maze path with your gaze.
+    •Click "Finish" when done.
+ 3. Authentication Outcome:
+    •Success: Redirected to the success page.
+    •Failure: Redirected to the login page to retry.
 
-## 🧪 Use Cases
+Customization
+•Threshold Adjustment:
+ •Modify the proximity threshold in gaze_tracking_module.py for more or less lenient gaze       matching.
+•Maze Complexity:
+ •Adjust the maze size in create_connected_maze_with_display(size=5) to generate simpler or more complex mazes.
+•Styling:
+ •Update CSS files in the static/ directory to customize the UI.
 
-* Secure login systems
-* Online exams
-* Banking authentication
-* Accessibility tools
+Known Issues
+•Ensure proper lighting for accurate gaze and facial recognition.
+•Webcam access may fail if permissions are not granted.
 
----
 
-## ⚠️ Limitations
+Future Enhancements
+•Multi-user support with real-time session management.
+•Integration with additional authentication factors.
+•Deployment on a production server with HTTPS.
 
-* Needs proper lighting
-* Webcam quality affects accuracy
-* Requires calibration
 
----
+Acknowledgments
+•GazeTracking Library
+•OpenCV
+•Flask
 
-## 🔮 Future Improvements
-
-* Deep learning-based gaze tracking
-* Mobile support
-* Multi-factor authentication
-* Accuracy improvements
-
----
-
-## 🤝 Contributing
-
-Feel free to contribute:
-
-1. Fork the repo
-2. Create a branch
-3. Make changes
-4. Submit a pull request
-
----
-
-## 📜 License
-
-MIT License
-
----
-
-## ⭐ Support
-
-If you like this project, give it a ⭐ on GitHub!
+Enjoy using the Gaze-Based Authentication System! 🚀
